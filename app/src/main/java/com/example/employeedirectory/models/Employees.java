@@ -20,15 +20,15 @@ public class Employees {
 
 
     public Employees(JSONObject jsonObject) throws JSONException {
-        this.uuid = jsonObject.getString("uuid");
-        this.full_name = jsonObject.getString("full_name");
-        this.phone_number = jsonObject.getString("phone_number");
-        this.email_address = jsonObject.getString("email_address");
-        this.biography = jsonObject.getString("biography");
-        this.photo_url_small = jsonObject.getString("photo_url_small");
-        this.photo_url_large = jsonObject.getString("photo_url_large");
-        this.team = jsonObject.getString("team");
-        this.employee_type = jsonObject.getString("employee_type");
+        this.uuid = EmployeeValidation.getuuid(jsonObject.getString("uuid"));
+        this.full_name = EmployeeValidation.getFull_name(jsonObject.getString("full_name"));
+        this.phone_number = EmployeeValidation.getPhone_number(jsonObject.getString("phone_number"));
+        this.email_address = EmployeeValidation.getEmail_address(jsonObject.getString("email_address"));
+        this.biography = EmployeeValidation.getBiography(jsonObject.getString("biography"));
+        this.photo_url_small = EmployeeValidation.getPhoto_url_small(jsonObject.getString("photo_url_small"));
+        this.photo_url_large = EmployeeValidation.getPhoto_url_large(jsonObject.getString("photo_url_large"));
+        this.team = EmployeeValidation.getTeam(jsonObject.getString("team"));
+        this.employee_type = EmployeeValidation.getEmployee_type(jsonObject.getString("employee_type"));
     }
 
     //Gets data from api call and creates and returns a list of type employees

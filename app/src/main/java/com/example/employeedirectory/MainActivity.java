@@ -26,6 +26,8 @@ import java.util.concurrent.ExecutionException;
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = "MainActivity";
     public static final String goodUrl = "https://s3.amazonaws.com/sq-mobile-interview/employees.json";
+    public static final String malformedUrl = "https://s3.amazonaws.com/sq-mobile-interview/employees_malformed.json";
+    public static final String emptyUrl = "https://s3.amazonaws.com/sq-mobile-interview/employees_empty.json";
     List<Employees> employees;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
