@@ -1,6 +1,8 @@
 package com.example.employeedirectory;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import okhttp3.Headers;
 
 import android.content.Context;
@@ -9,6 +11,7 @@ import android.util.Log;
 
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
+import com.example.employeedirectory.adapters.EmployeeAdapter;
 import com.example.employeedirectory.models.Employees;
 import com.example.employeedirectory.models.HttpRequest;
 
@@ -31,6 +34,17 @@ public class MainActivity extends AppCompatActivity {
 
         employees = new ArrayList<>();
 
+        RecyclerView rvEmployee = findViewById(R.id.rvEmployees);
+
+        //create adapter
+        final EmployeeAdapter employeeAdapter = new EmployeeAdapter(this, employees);
+
+        //set adapter to recyclerView
+        rvEmployee.setAdapter(employeeAdapter);
+
+        //set a layout manager on the recyclerView
+        rvEmployee.setLayoutManager(new LinearLayoutManager(this));
+
         //class used to call https requests
         AsyncHttpClient client = new AsyncHttpClient();
 
@@ -43,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 JSONObject jsonObject = json.jsonObject;
                 try {
                     employees.addAll(Employees.dataFromJSONArray(jsonObject.getJSONArray("employees")));
-                    Log.d("BeforeReturn", employees.toString());
+                    employeeAdapter.notifyDataSetChanged();
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Log.e(TAG, e.toString());
