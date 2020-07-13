@@ -1,0 +1,65 @@
+commit e9b9d43d6623cf01007518dbd8a1d2fd8eb78fbb
+Author: Sparkadelic177 <sparkyevangelista@gmail.com>
+Date:   Mon Jul 13 17:16:06 2020 -0400
+
+    changed api url
+
+commit b7acd6e04ea7024da0f9598a3c3d765404828268
+Author: Sparkadelic177 <sparkyevangelista@gmail.com>
+Date:   Mon Jul 13 17:02:59 2020 -0400
+
+    added readme and refactored some code in main activity
+
+commit 8432b27cd356698437aa1f7c559e5f3bf4008c02
+Author: Sparkadelic177 <sparkyevangelista@gmail.com>
+Date:   Mon Jul 13 07:06:58 2020 -0400
+
+    deleted todo comment
+
+commit 3f82c133bf66cfbebdf2819b0672b3deba70ea0b
+Author: Sparkadelic177 <sparkyevangelista@gmail.com>
+Date:   Mon Jul 13 07:06:29 2020 -0400
+
+    added orientation styles and image placeholders
+
+commit cd1bd24e8ad22067586721e12ed254ecab2cc5cd
+Author: Sparkadelic177 <sparkyevangelista@gmail.com>
+Date:   Mon Jul 13 06:31:06 2020 -0400
+
+    added sorting by names
+
+commit eaa5ff4e2cb01efec3f7fb9c36695cce010875e2
+Author: Sparkadelic177 <sparkyevangelista@gmail.com>
+Date:   Sun Jul 12 16:24:50 2020 -0400
+
+    added json validation
+
+commit 499f194a06256713614abd77630b7e4827aabbfc
+Author: Sparkadelic177 <sparkyevangelista@gmail.com>
+Date:   Sun Jul 12 15:57:07 2020 -0400
+
+    added adater class
+
+commit 3818d8ea47bccfcbf281b44aa9100dcfd780cdd0
+Author: Sparkadelic177 <sparkyevangelista@gmail.com>
+Date:   Sun Jul 12 15:33:40 2020 -0400
+
+    added employees class
+
+commit 22ada4a64daf9ed6a6c4cf819b738db639312fc8
+Author: Sparkadelic177 <sparkyevangelista@gmail.com>
+Date:   Sun Jul 12 13:58:24 2020 -0400
+
+    added http request class
+
+commit e1998ad04eaf8cd3af6c628e6590946b99b2bf93
+Author: Sparkadelic177 <sparkyevangelista@gmail.com>
+Date:   Sun Jul 12 13:37:05 2020 -0400
+
+    init push
+
+commit d2b85d5a3592de1761317aad750224ca23bc8bb5
+Author: sparky evangelista <Sparkyevangelista@gmail.com>
+Date:   Sun Jul 12 13:32:55 2020 -0400
+
+    Initial commit
