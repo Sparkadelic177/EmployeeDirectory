@@ -2,7 +2,6 @@ package com.example.employeedirectory.models;
 
 import org.json.JSONException;
 
-import java.lang.reflect.MalformedParametersException;
 
 public class EmployeeValidation {
     //required
