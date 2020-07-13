@@ -1,6 +1,7 @@
 package com.example.employeedirectory.adapters;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,7 +66,17 @@ public class EmployeeAdapter extends RecyclerView.Adapter<EmployeeAdapter.ViewHo
         public void bind(Employees employee) {
             tvName.setText(employee.getFull_name());
             tvTeam.setText(employee.getTeam());
-            Glide.with(context).load(employee.getPhoto_url_small()).into(ivPhoto);
+
+            int orientationValue = context.getResources().getConfiguration().orientation;
+
+            if (orientationValue == Configuration.ORIENTATION_PORTRAIT) {
+                Glide.with(context).load(employee.getPhoto_url_small()).placeholder(R.drawable.ic_launcher_foreground).into(ivPhoto);
+            }
+
+            if (orientationValue == Configuration.ORIENTATION_LANDSCAPE) {
+                Glide.with(context).load(employee.getPhoto_url_large()).into(ivPhoto);
+            }
+
         }
 
     }

@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         employees = new ArrayList<>();
 
-        RecyclerView rvEmployee = findViewById(R.id.rvEmployees);
+        RecyclerView rvEmployee = findViewById(R.id.rvEmployeesLand);
 
         //create adapter
         final EmployeeAdapter employeeAdapter = new EmployeeAdapter(this, employees);
