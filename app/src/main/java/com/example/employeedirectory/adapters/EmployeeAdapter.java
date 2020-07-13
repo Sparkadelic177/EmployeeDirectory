@@ -47,6 +47,8 @@ public class EmployeeAdapter extends RecyclerView.Adapter<EmployeeAdapter.ViewHo
         return employees.size();
     }
 
+    // Provide a direct reference to each of the views within a data item
+    // Used to cache the views within the item layout for fast access
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView tvName;

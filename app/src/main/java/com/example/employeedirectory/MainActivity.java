@@ -5,23 +5,20 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import okhttp3.Headers;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.example.employeedirectory.adapters.EmployeeAdapter;
 import com.example.employeedirectory.models.Employees;
-import com.example.employeedirectory.models.HttpRequest;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = "MainActivity";
@@ -68,7 +65,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFailure(int statusCode, Headers headers, String response, Throwable throwable) {
                 Log.d(TAG, "onFailure");
+                Toast.makeText(MainActivity.this, response, Toast.LENGTH_SHORT).show();
+                employees.clear();
+                employeeAdapter.notifyDataSetChanged();
             }
         });
     }
+
 }

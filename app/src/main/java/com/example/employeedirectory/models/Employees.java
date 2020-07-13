@@ -34,10 +34,29 @@ public class Employees {
     //Gets data from api call and creates and returns a list of type employees
     public static List<Employees> dataFromJSONArray(JSONArray employeesArray) throws JSONException {
         List<Employees> employees = new ArrayList<>();
+        employeesArray = sortNames(employeesArray);
         for(int i = 0; i < employeesArray.length(); i++){
             employees.add(new Employees(employeesArray.getJSONObject(i)));
         }
         return employees;
+    }
+
+    //sorting by name
+    public static JSONArray sortNames(JSONArray employeeArray) throws JSONException {
+        String temp = "";
+        for (int i = 0; i < employeeArray.length(); i++)
+        {
+            for (int j = i + 1; j < employeeArray.length(); j++)
+            {
+                if (employeeArray.getJSONObject(i).getString("full_name").compareTo(employeeArray.getJSONObject(j).getString("full_name"))>0)
+                {
+                    temp = employeeArray.getJSONObject(i).getString("full_name");
+                    employeeArray.getJSONObject(i).put("full_name", employeeArray.getJSONObject(j).getString("full_name"));
+                    employeeArray.getJSONObject(j).put("full_name", temp);
+                }
+            }
+        }
+        return employeeArray;
     }
 
     //getter functions for this class
