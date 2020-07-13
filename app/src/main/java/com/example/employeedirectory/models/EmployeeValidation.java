@@ -46,7 +46,6 @@ public class EmployeeValidation {
         if(photo_url_small != null){
             return photo_url_small;
         }
-        //TODO: should return default image
         return "";
     }
 
@@ -54,7 +53,6 @@ public class EmployeeValidation {
         if(photo_url_large != null){
             return photo_url_large;
         }
-        //TODO: should return default image
         return "";
     }
     //required
