@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         AsyncHttpClient client = new AsyncHttpClient();
 
         //this method makes a get http request to the given URL
-        client.get(emptyUrl, new JsonHttpResponseHandler() {
+        client.get(goodUrl, new JsonHttpResponseHandler() {
 
             @Override
             public void onSuccess(int statusCode, Headers headers, JsonHttpResponseHandler.JSON json) {
