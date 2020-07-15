@@ -6,66 +6,53 @@ import org.json.JSONException;
 public class EmployeeValidation {
     //required
     public static String getuuid(String uuid) throws JSONException {
-        if(uuid != null){
-            return uuid;
-        }
-        throw new JSONException("uuid is not present");
+        return nullChecker(uuid, "uuid");
     }
     //required
     public static String getFull_name(String full_name)throws JSONException {
-        if(full_name != null ){
-            return full_name;
-        }
-        throw new JSONException("full_name is not present");
+        return nullChecker(full_name, "full_name");
     }
 
     public static String getPhone_number(String phone_number) {
-        if(phone_number != null){
-            return phone_number;
-        }
-        return "";
+        return defaultNullChecker(phone_number);
     }
 
     //required
     public static String getEmail_address(String email_address) throws JSONException {
-        if(email_address != null){
-            return email_address;
-        }
-        throw new JSONException("email_address is not present");
+        return nullChecker(email_address, "email_address");
     }
 
     public static String getBiography(String biography) {
-        if(biography != null){
-            return biography;
-        }
-        return "";
+       return defaultNullChecker(biography);
     }
 
     public static String getPhoto_url_small(String photo_url_small) {
-        if(photo_url_small != null){
-            return photo_url_small;
-        }
-        return "";
+        return defaultNullChecker(photo_url_small);
     }
 
     public static String getPhoto_url_large(String photo_url_large) {
-        if(photo_url_large != null){
-            return photo_url_large;
-        }
-        return "";
+        return defaultNullChecker(photo_url_large);
     }
     //required
     public static String getTeam(String team) throws JSONException {
-        if(team  != null){
-            return team;
-        }
-        throw new JSONException("Team is not present");
+        return nullChecker(team, "team");
     }
     //required
     public static String getEmployee_type(String employee_type) throws JSONException {
-        if(employee_type != null){
-            return employee_type;
+       return nullChecker(employee_type, "employee_type");
+    }
+
+    static String nullChecker(String value, String type) throws JSONException{
+        if(value != null){
+            return value;
         }
-        throw new JSONException("employee_type is not present");
+        throw new JSONException( type + " is not present");
+    }
+
+    static String defaultNullChecker(String value){
+        if(value != null){
+            return value;
+        }
+        return "";
     }
 }
